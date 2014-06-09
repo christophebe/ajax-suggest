@@ -1,0 +1,23 @@
+{
+  "name": "ajax-suggest",
+  "version": "0.1.0",
+  "author": "Christophe Lombart <christophe.lombart@gmail.com>",
+  "description": "a Google suggest component that scrape ajax suggestions provided by Google",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christophebe/ajax-suggest.git"
+  },
+  "dependencies": {
+    "selenium-webdriver" : "*",
+    "winston": "*"
+  },
+  "keywords": [
+    "Google",
+    "suggest",
+    "Google ajax suggest",
+    "scraper",
+    "SEO"
+  ],
+  "license": "MIT"
+
+}
