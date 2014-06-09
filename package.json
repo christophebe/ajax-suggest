@@ -8,6 +8,7 @@
     "url": "https://github.com/christophebe/ajax-suggest.git"
   },
   "dependencies": {
+    "async" : "*",
     "selenium-webdriver" : "*",
     "winston": "*"
   },
