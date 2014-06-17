@@ -11,7 +11,8 @@ console.log("Start Google Ajax Suggest for : " + keyword );
 
 var config = suggest.config()
 										.setKeyword(keyword)
-										.setPrefixs(["a ", "b ", "c ", "d ", "comment a ", "comment b ", "où a ", "où b "]);
+										.setPrefixs(["a ", "b ", "c ", "d ", "comment a ", "comment b ", "où a ", "où b "])
+										.setPostfixs([" a", " b", " c", " d", " e", " f"]);
 
 
 // output the result on the console
