@@ -1,29 +1,38 @@
 var suggest = require("./lib/suggest");
 
 if ( process.argv.length != 3 ) {
-	console.log('usage: node app.js [keyword1]\n');
+	console.log('usage: node app.js keyword\n');
 	return;
 }
 
-var keyword = process.argv.slice(2);
+var keyword = process.argv[2];
 
 console.log("Start Google Ajax Suggest for : " + keyword );
 
 var config = suggest.config()
 										.setKeyword(keyword)
-										.setPrefixs(["a ", "b ", "c ", "d ", "comment a ", "comment b", "où a ", "où "])
-										//.setPostfixs([" a", " b", " c", " d", " e", " f"]);
+										.setOutputStream(process.stdout)
+									  .setPrefixs([ "a ", "b ", "comment a ", "comment b ", "où a ", "où b "])
+										.setPostfixs([" a", " b", " c", " d", " e", " f"]);
 
 
-// output the result on the console
-suggest.suggestKeywords(config, function(result) {
+/**
+ *	output the result on the console via the outputstream
+ *
+ *  You can call this method with a callback, eg. :
+ *
+ *  <pre><code>
+ *	 suggest.suggestKeywords(config, function(result) {
+ *
+ *			result.forEach(function(suggest) {
+ *						console.log(suggest);
+ *
+ *		});
+ *
+ *	 });
+ *  </code></pre>
+ *
+ *
+ */
 
-
-	//console.log("Result : " + result);
-	result.forEach(function(suggest) {
-				console.log(suggest);
-
-  });
-
-
-});
+suggest.suggestKeywords(config);
